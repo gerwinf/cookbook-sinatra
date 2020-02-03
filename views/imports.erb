@@ -1,0 +1,11 @@
+<h1>Relevant recipes found online</h1>
+
+<p>Choose which recipe to import from the results below:</p>
+
+<ul>
+  <% @matching_recipes.each_with_index do |(key, value), index| %>
+    <li><%= "#{key[:name]}" %>: <%= "#{key[:description]}" %> (<em><%= "#{key[:prep_time]}" %>, <%= "#{key[:difficulty]}" %></em>) | <a href="/imports/<%= index %>">Import</a></li>
+  <% end %>
+</ul>
+
+<a href="/">Back to cookbook</a>

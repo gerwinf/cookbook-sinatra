@@ -1,0 +1,14 @@
+<h1>Welcome to Gerwin's Cookbook</h1>
+
+<p>The cookbook currently contains:</p>
+
+<ul>
+  <% @recipes.each_with_index do |recipe, index| %>
+  <% done = recipe.done? ? "[X]" : "[ ]" %>
+    <li><!--<%= "#{done}" %>--> <%= recipe.name %>: <%= recipe.description %> (<em><%= recipe.prep_time %>, <%= recipe.difficulty %></em>) <a href="<%= recipe.url %>">View</a>  <!--| <a href="/cooked/<%= index %>">Mark as done</a> --> | <a href="/recipes/<%= index %>">Delete</a></li>
+  <% end %>
+</ul>
+
+<a href="/import">Import online recipe</a>
+<br>
+<a href="/new">Add your recipe</a>
